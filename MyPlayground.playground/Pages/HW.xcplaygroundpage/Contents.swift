@@ -3,7 +3,6 @@
 import Foundation
 
 
-
 //var and constant assignment
 var Integer: Int = 10;
 print("The value of Integer is \(Integer)")
@@ -15,7 +14,6 @@ var Double: Double = 3.14159;
 print("The value of Double is \(Double)")
 var Bool: Bool = true;
 print("The value of Bool is \(Bool)")
-
 
 let constantInteger: Int = Integer+4;
 print("The value of constantInteger is \(constantInteger)")
@@ -34,13 +32,13 @@ array.append(contentsOf: newArray)
 print("The New Value of the combined array aew \(array)")
 
 // Creating copies of array (array uses Copy on Write)
-var arrayCopy: [Any] = newArray;
-print("Array Copy is \(arrayCopy) and original array is \(array) \n");
+//var arrayCopy: [Any] = newArray;
+//print("Array Copy is \(arrayCopy) and original array is \(array) \n");
 
 // changing value in arrayCopy will not change values in original copy array
-array[array.count] = false
-arrayCopy[0] = array[array.count]
-print("After inserting values, array copy is \(arrayCopy) and original array is \(array) \n");
+//array[array.count-1] = false
+//arrayCopy[0] = array[array.count-1]
+//print("After inserting values, array copy is \(arrayCopy) and original array is \(array) \n");
 
 // Set operations
 var Set:Set = [Integer, Integer, Integer, 11, 12, 13, constantInteger, constantInteger+1, 0]

@@ -32,13 +32,13 @@ array.append(contentsOf: newArray)
 print("The New Value of the combined array \(array)\n")
 
 //Creating copies of array (array uses Copy on Write)
-var arrayCopy: [Any] = newArray;
-print("Array Copy is \(arrayCopy) and original array is \(array) \n");
+//var arrayCopy: [Any] = newArray;
+//print("Array Copy is \(arrayCopy) and original array is \(array) \n");
 
 // changing value in arrayCopy will not change values in original copy array
 //array[array.count-1] = 20
 //arrayCopy[0] = array[array.count-1]
-print("After inserting values, array copy is \(arrayCopy) and original array is \(array) \n");
+//print("After inserting values, array copy is \(arrayCopy) and original array is \(array) \n");
 
 // Set operations
 var Set:Set = [Integer, Integer, Integer, 11, 12, 13, constantInteger, constantInteger+1, 0, 5]
