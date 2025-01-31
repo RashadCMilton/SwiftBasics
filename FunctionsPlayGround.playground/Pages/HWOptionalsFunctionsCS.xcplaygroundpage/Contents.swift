@@ -13,7 +13,7 @@ import Foundation
     return (top, bottom ?? "No Pants!", hasShoes ?? false)
 }
 // Calling function and storing in clothes tuple
-var clothes = GetAllClothes(top: nil ,bottom:nil, hasShoes:nil)
+var clothes = GetAllClothes(top: nil ,bottom:"Cargos", hasShoes:nil)
 print("\(clothes)\n")
 
 // Sets random temperature value to determine if you need a shirt
@@ -36,11 +36,12 @@ else {
 if let top = clothes.0 {
     print("If let safe unwrapping: \(top) \n")
 }
+
 // Assigns clothes if none
 switch clothes {
-case ("No Shirt!",_,_):
+case ("No Shirt!",_,_),(nil,_,_):
     clothes.0 = "T-shirt"
-case (_,"No Pants!",_):
+case (_,"No Pants!",_), (_,nil,_):
     clothes.1 = "Pants"
 case (_,_,false):
     clothes.2 = true
