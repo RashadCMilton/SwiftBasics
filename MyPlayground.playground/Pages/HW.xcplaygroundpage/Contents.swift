@@ -49,10 +49,10 @@ arr.append(Integer+15); arr.append(Integer+16); arr.append(Integer+17);
 
 print("The intersection between the Set: \(Set) and the Array: \(arr) is \n \(Set.intersection(arr)) \n")
 
-
 // dictionary operations
 var dictionary: Dictionary<String, Any> = ["Integer": Integer, "constantInteger": constantInteger, "Integer+2": Integer+2, "Float": Float, "string": string, "Bool": Bool, "Double": Double]
 print("This is the dictionary \(dictionary) \n")
+print(dictionary["Float"])
 dictionary["Integer+100"] = Integer+100
 dictionary["Float+100"] = Float+100
 dictionary["Double+100"] = Double+100

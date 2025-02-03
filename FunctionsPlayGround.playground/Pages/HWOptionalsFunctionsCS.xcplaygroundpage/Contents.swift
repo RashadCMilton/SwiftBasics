@@ -6,14 +6,14 @@ import Foundation
 
 //: [Next](@next)
 // Main function
-@MainActor func GetAllClothes(top:String?, bottom:String?, hasShoes:Bool?) -> (String?, String?, Bool?) {
+@MainActor func getAllClothes(top:String?, bottom:String?, hasShoes:Bool?) -> (String?, String?, Bool?) {
     guard let top = top else {
         return ("No Shirt!", bottom ?? "No Pants!", hasShoes ?? false)
     }
     return (top, bottom ?? "No Pants!", hasShoes ?? false)
 }
 // Calling function and storing in clothes tuple
-var clothes = GetAllClothes(top: nil ,bottom:"Cargos", hasShoes:nil)
+var clothes = getAllClothes(top: nil ,bottom:"Cargos", hasShoes:nil)
 print("\(clothes)\n")
 
 // Sets random temperature value to determine if you need a shirt
