@@ -30,8 +30,5 @@ struct Subject {
     var name: String
 }
 var emp1: Employee? = Employee(name: "Ravi", dept: "IT")
-emp1.updateDept("HR")
-emp1.work()
-emp1?.subject = Subject(name: "Swift")
-print(\(emp1?.subject?.name))
+
 // Optional chaining allow code not to crash in presence of nil values
