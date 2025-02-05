@@ -26,10 +26,12 @@ func fetchData(from urlString: String, completion: @escaping (Result<Data, Error
             print("Http Response status code: \(httpResponse.statusCode)")
         }
         // Safe unwraps data
+        
         guard let data = data else {
             completion(.failure(NSError(domain: "No data returned", code: 0, userInfo: nil)))
             return
         }
+        //completion(.failure(NSError(domain: "No data returned", code: 0, userInfo: nil)))
         completion(.success(data))
     }
     task.resume() // Starts the task after neccsary boundary checking

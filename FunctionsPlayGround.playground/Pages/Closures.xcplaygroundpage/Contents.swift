@@ -68,8 +68,46 @@ nonEscapingClosure {
     print(greeting)
     print("Non-Escaping Closure")
 }
-// 2. Escaping closures - a closure which outlives the scope of the function, and which gets evaluated somme time in future. This escaping closures are usually used for async programming, like API/WebService calls
 
+func computerSomeValues(operation: () -> Int) {
+    let result = operation()
+    print("Result: \(result)")
+}
+computerSomeValues {
+    return 5 + 10
+}
+computerSomeValues {
+    return 50
+}
+// 2. Escaping closures - a closure which outlives the scope of the function, and which gets evaluated somme time in future. This escaping closures are usually used for async programming, like API/WebService calls
+    
+// completion() happen sometime after function in closure
+func delayOpertaion(completion: @escaping () -> Void) {
+    print("Start of Delay Operation")
+    DispatchQueue.global().asyncAfter(deadline: .now() + 2) {
+        print("Delay execution after 2 seconds")
+        completion()
+    }
+    print("End of Delay Operation")
+}
+delayOpertaion {
+    for i in 1...5 {
+        print(i)
+    }
+}
+
+func process(numbers: [Int], operation: @escaping (Int) -> Void) {
+    for num in numbers {
+        DispatchQueue.main.async {
+            sleep(3)
+            operation(num);
+        }
+        
+    }
+}
+process(numbers: [1,2,3,4,5,6]) { result in
+    print("getting output from process as \(result)")
+}
 func escapingClosure(url:String, completion:@escaping () -> Void) {
         print("Start of Escaping Closure")
     DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
@@ -101,3 +139,12 @@ func greet(msg:String, wish:()->Void) {
 greet(msg: "Good Morning") {
     print("Hey! this is an auto closure!")
 }
+
+func debugMyLogs(_ msg: @autoclosure () -> String) {
+    print("My log is: \(msg())")
+}
+debugMyLogs("Value of x = 10")
+debugMyLogs("Value of x = 34")
+debugMyLogs("Value of x = 20")
+
+
