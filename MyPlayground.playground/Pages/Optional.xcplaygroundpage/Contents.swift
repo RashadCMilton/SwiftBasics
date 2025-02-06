@@ -5,6 +5,9 @@ import Foundation
 // Default value of optionals is NIL value
 
 var name:String?
+/*
+ enum Optional<>
+ */
 name = "Shubham"
 print("Name is \(name)")
 
