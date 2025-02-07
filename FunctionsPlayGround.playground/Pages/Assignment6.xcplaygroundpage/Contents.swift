@@ -1,8 +1,8 @@
 import Foundation
 
 class Building {
-    var doors: Door?
-    //weak var doors: Door?
+   // var doors: Door?
+    weak var doors: Door?
     init() {
         
         print( "Initialized Building with \(self)")
@@ -29,14 +29,15 @@ doors?.building = Mansion
 Mansion = nil
 doors = nil
 
+print()
 class Closures {
     var taskToBeDone: (() -> Void)?
     init(){
         print("Initialized Closures")
     }
     func closureFunc() {
-        taskToBeDone = { //[weak self] in
-        [unowned self] in
+        taskToBeDone = { [weak self] in
+       //[unowned self] in
             print("Weak Self Function called \(String(describing: self))")
         }
     }
@@ -49,7 +50,7 @@ var testClosure:Closures? = Closures()
 testClosure?.closureFunc()
 testClosure?.taskToBeDone?()
 testClosure = nil
-
+print()
 var firstArray = Array(repeating: 0, count: 100)
 firstArray.withUnsafeBufferPointer() { ptr in
     print("firstArray address:\n\(ptr.baseAddress ?? nil)")
@@ -67,6 +68,7 @@ secondArray.withUnsafeBufferPointer() { ptr in
 firstArray.withUnsafeBufferPointer() { ptr in
     print("firstArray address:\n\(ptr.baseAddress ?? nil)")
 }
+print()
 
 protocol Task {
     associatedtype Result
