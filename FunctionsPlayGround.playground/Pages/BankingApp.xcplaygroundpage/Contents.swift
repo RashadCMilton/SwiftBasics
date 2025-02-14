@@ -8,6 +8,7 @@ protocol BankOperation{
 }
 // Stores neccsary account information and enums for status of transactions
 class Account: BankOperation{
+    
     var balance: Double
     var accountNumber: Int
     var name: String
@@ -23,7 +24,7 @@ class Account: BankOperation{
         case deposit(amountToDeposit: Int, name: String, balance: Double)
         case withdraw(amountToWithdraw: Int, name: String, balance: Double)
         case addInterest(interestRate: Double, balance: Double, name: String)
-        case transfer(savingAccount)
+        //case transfer(savingAccount)
     }
     
     func deposit(_ amount: Double){
@@ -51,6 +52,7 @@ extension BankOperation {
         print("No Interest for this account \n")
     }
 }
+
 // has interest rate
 class savingAccount: Account{
     var interestRate: Double
@@ -109,7 +111,8 @@ class BankManager{
 
 // randomized accounts based on count var
 var bankManager = BankManager()
-let count = 5;
+let count = 70;
+
 var accountsForTesting = Array(0..<count).map { index in
     let randomNames = ["Bill", "Bob", "Steve", "Mary", "Rash", "Isiah"]
     let randomName = randomNames.randomElement() ?? "User"

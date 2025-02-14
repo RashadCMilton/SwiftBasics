@@ -62,26 +62,112 @@ DispatchQueue.main.async {
 //    self.label.text = "Welcome to Swift"
 //    self.view.backgroundColor = .systemBlue
 }
-
-func loadImageFromUrl(_ url:URL) {
-    DispatchQueue.global().async {
-        if let data = data(contentsOf: url), let image = UImage(data:data) {
-            DispatchQueue.main.async { // should be done in main because dealing with UI
-              //  self.imageView.image = image
-            }
-        }
-    }
-}
+//Error
+//func loadImageFromUrl(_ url:URL) {
+//    DispatchQueue.global().async {
+//        if let data = data(contentsOf: url), let image = UImage(data:data) {
+//            DispatchQueue.main.async { // should be done in main because dealing with UI
+//              //  self.imageView.image = image
+//            }
+//        }
+//    }
+//}
 
 // Animation or Animating views
-
-DispatchQueue.main.async{
-    UIView.animate(withDuration: 1) {
-        self.view.alpha = 0.5
-    }
-}
+// Error
+//DispatchQueue.main.async{
+//    UIView.animate(withDuration: 1) {
+//        self.view.alpha = 0.5
+//    }
+//}
 
 // execute any ui related task but with certain delay
 DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
     print("Doing task after 3 seconds")
 }
+
+/* b. Serial Queue (Custom queues) - this are focus to create our own queue
+ // This excutes only one task at a time in the order they are added
+ 
+ */
+
+let myQueue = DispatchQueue(label: "com.ba.AccessSpeciferPrj.myQueue")
+// add tasks to the serial queue
+myQueue.async {
+    print("Task 1 Started")
+    print("Task 1 In progress")
+    print("Task 1 finished")
+}
+
+//print()
+
+myQueue.async {
+    print("Task 2 Started")
+    print("Task 2 In progress")
+    print("Task 2 finished")
+}
+
+
+// Concurrent Queue
+// Concurrent Queue - this queue that can execute mutiple task simaentously but it will still follw order of starting the same way in which tasks are added
+
+let concurrentQueue = DispatchQueue(label: "com.ba.AccessSpeciferPrj.concurrentQueue", attributes: .concurrent)
+//Happens in parraelel (simatenously)
+// the last one starts last in concurrentQueue
+concurrentQueue.async {
+    print("Task 1 Started")
+    print("Task 1 In progress")
+    print("Task 1 finished")
+}
+concurrentQueue.async {
+    print( "Task 2 Started")
+    print("Task 2 In progress")
+    print("Task 2 finished")
+}
+concurrentQueue.async {
+    print( "Task 3 Started")
+    print("Task 3 In progress")
+    print("Task 3 finished")
+}
+
+// default attribute is serial queue
+let printQueue = DispatchQueue(label: "com.ba.AccessSpeciferPrj.printQueue")
+
+printQueue.async {
+    for i in 1...10 {
+        print(i)
+    }
+    print("Task 1 finished")
+}
+printQueue.async {
+    for i in 30...40 {
+        print(i)
+    }
+    print("Task 2 finished")
+}
+printQueue.async {
+    for i in 100...120 {
+        print(i)
+    }
+    print("Task 3 finished")
+}
+
+concurrentQueue.async {
+    for i in 1...10 {
+        print(i)
+    }
+    print("CTask 1 finished")
+}
+concurrentQueue.async {
+    for i in 30...40 {
+        print(i)
+    }
+    print("CTask 2 finished")
+}
+concurrentQueue.async {
+    for i in 100...120 {
+        print(i)
+    }
+    print("CTask 3 finished")
+}
+
