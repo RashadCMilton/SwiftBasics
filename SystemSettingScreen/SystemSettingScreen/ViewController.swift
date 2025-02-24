@@ -4,10 +4,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     let tableView = UITableView(frame: .zero, style: .insetGrouped)
     
-    let sections = [//"Account",
+    let sections = ["Account",
                     "System Settings", "Features"]
     let settings = [
-       //[["Apple Account", "Sign in to access your iCloud data, the App Store, Apple services and more.", "applelogo", true]],
+       [["Apple Account", "Sign in to access your iCloud data, the App Store, Apple services and more.", "applelogo", true]],
         [["General", "", "gearshape.fill", false],
          ["Accessibility", "", "accessibility", false],
          ["Action Button", "", "arrow.right.square.fill", false],
@@ -46,7 +46,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(SettingsCell.self, forCellReuseIdentifier: "SettingsCell")
-        //tableView.register(AppleIDCell.self, forCellReuseIdentifier: "AppleIDCell")
+        tableView.register(AppleIDCell.self, forCellReuseIdentifier: "AppleIDCell")
     }
     
     // MARK: - UITableViewDataSource
@@ -62,15 +62,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let setting = settings[indexPath.section][indexPath.row]
         
-//        if setting[3] as! Bool {
-//            let cell = tableView.dequeueReusableCell(withIdentifier: "AppleIDCell", for: indexPath) as! AppleIDCell
-//            cell.configure(title: setting[0] as! String, subtitle: setting[1] as! String, iconName: setting[2] as! String)
-//            return cell
-//        } else {
+        if setting[3] as! Bool {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "AppleIDCell", for: indexPath) as! AppleIDCell
+            cell.configure(title: setting[0] as! String, subtitle: setting[1] as! String, iconName: setting[2] as! String)
+            return cell
+        } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "SettingsCell", for: indexPath) as! SettingsCell
             cell.configure(title: setting[0] as! String, iconName: setting[2] as! String)
             return cell
-       // }
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -159,69 +159,69 @@ class SettingsCell: UITableViewCell {
     }
 }
 
-//class AppleIDCell: UITableViewCell {
-//    private let iconImageView: UIImageView = {
-//        let imageView = UIImageView()
-//        imageView.contentMode = .scaleAspectFit
-//        imageView.clipsToBounds = true
-//        return imageView
-//    }()
-//    
-//    private let titleLabel: UILabel = {
-//        let label = UILabel()
-//        label.font = .systemFont(ofSize: 20, weight: .regular)
-//        return label
-//    }()
-//    
-//    private let subtitleLabel: UILabel = {
-//        let label = UILabel()
-//        label.font = .systemFont(ofSize: 12)
-//        label.textColor = .secondaryLabel
-//        label.numberOfLines = 2
-//        return label
-//    }()
-//    
-//    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-//        super.init(style: style, reuseIdentifier: reuseIdentifier)
-//        setupViews()
-//    }
-//    
-//    required init?(coder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
-//    
-//    private func setupViews() {
-//        accessoryType = .disclosureIndicator
-//        
-//        let stackView = UIStackView(arrangedSubviews: [titleLabel, subtitleLabel])
-//        stackView.axis = .vertical
-//        stackView.spacing = 4
-//        
-//        contentView.addSubview(iconImageView)
-//        contentView.addSubview(stackView)
-//        
-//        iconImageView.translatesAutoresizingMaskIntoConstraints = false
-//        stackView.translatesAutoresizingMaskIntoConstraints = false
-//        
-//        NSLayoutConstraint.activate([
-//            iconImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-//            iconImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15),
-//            iconImageView.widthAnchor.constraint(equalToConstant: 50),
-//            iconImageView.heightAnchor.constraint(equalToConstant: 50),
-//            
-//            stackView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-//            stackView.leadingAnchor.constraint(equalTo: iconImageView.trailingAnchor, constant: 15),
-//            stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15)
-//        ])
-//    }
-//    
-//    func configure(title: String, subtitle: String, iconName: String) {
-//        titleLabel.text = title
-//        subtitleLabel.text = subtitle
-//        
-//        // Create circular Apple logo with dots
-//        let configuration = UIImage.SymbolConfiguration(pointSize: 30, weight: .regular)
-//        iconImageView.image = UIImage(systemName: iconName, withConfiguration: configuration)
-//        iconImageView.tintColor = .systemBlue
-//    }
-//}
+class AppleIDCell: UITableViewCell {
+    private let iconImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
+        imageView.clipsToBounds = true
+        return imageView
+    }()
+
+    private let titleLabel: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 20, weight: .regular)
+        return label
+    }()
+
+    private let subtitleLabel: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 12)
+        label.textColor = .secondaryLabel
+        label.numberOfLines = 2
+        return label
+    }()
+
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setupViews()
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    private func setupViews() {
+        accessoryType = .disclosureIndicator
+
+        let stackView = UIStackView(arrangedSubviews: [titleLabel, subtitleLabel])
+        stackView.axis = .vertical
+        stackView.spacing = 4
+
+        contentView.addSubview(iconImageView)
+        contentView.addSubview(stackView)
+
+        iconImageView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            iconImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            iconImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15),
+            iconImageView.widthAnchor.constraint(equalToConstant: 50),
+            iconImageView.heightAnchor.constraint(equalToConstant: 50),
+
+            stackView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            stackView.leadingAnchor.constraint(equalTo: iconImageView.trailingAnchor, constant: 15),
+            stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15)
+        ])
+    }
+
+    func configure(title: String, subtitle: String, iconName: String) {
+        titleLabel.text = title
+        subtitleLabel.text = subtitle
+
+        // Create circular Apple logo with dots
+        let configuration = UIImage.SymbolConfiguration(pointSize: 30, weight: .regular)
+        iconImageView.image = UIImage(systemName: iconName, withConfiguration: configuration)
+        iconImageView.tintColor = .systemBlue
+    }
+}

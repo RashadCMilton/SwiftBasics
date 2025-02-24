@@ -6,8 +6,35 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		5B56F0CE2D66BEE200AA7E1D /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 5B56F0CD2D66BEE200AA7E1D /* GoogleSignIn */; };
+		5B56F0D02D66BEE200AA7E1D /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5B56F0CF2D66BEE200AA7E1D /* GoogleSignInSwift */; };
+		5B77D2342D644B91005ECC5F /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = 5B77D2332D644B91005ECC5F /* SwiftKeychainWrapper */; };
+		5BB998012D66E9A7003346EE /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 5BB998002D66E9A7003346EE /* GoogleSignIn */; };
+		5BB998032D66E9A7003346EE /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5BB998022D66E9A7003346EE /* GoogleSignInSwift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5BB997EC2D66E319003346EE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B77D17F2D5F004E005ECC5F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5B77D1862D5F004E005ECC5F;
+			remoteInfo = LoginScreen;
+		};
+		5BB997FB2D66E334003346EE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B77D17F2D5F004E005ECC5F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5B77D1862D5F004E005ECC5F;
+			remoteInfo = LoginScreen;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		5B77D1872D5F004E005ECC5F /* LoginScreen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginScreen.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BB997E82D66E319003346EE /* LoginScreenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoginScreenTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BB997F52D66E334003346EE /* LoginScreenUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoginScreenUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -29,6 +56,16 @@
 			path = LoginScreen;
 			sourceTree = "<group>";
 		};
+		5BB997E92D66E319003346EE /* LoginScreenTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = LoginScreenTests;
+			sourceTree = "<group>";
+		};
+		5BB997F62D66E334003346EE /* LoginScreenUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = LoginScreenUITests;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +73,25 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B56F0D02D66BEE200AA7E1D /* GoogleSignInSwift in Frameworks */,
+				5B77D2342D644B91005ECC5F /* SwiftKeychainWrapper in Frameworks */,
+				5B56F0CE2D66BEE200AA7E1D /* GoogleSignIn in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BB997E52D66E319003346EE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BB997F22D66E334003346EE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BB998012D66E9A7003346EE /* GoogleSignIn in Frameworks */,
+				5BB998032D66E9A7003346EE /* GoogleSignInSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +102,8 @@
 			isa = PBXGroup;
 			children = (
 				5B77D1892D5F004E005ECC5F /* LoginScreen */,
+				5BB997E92D66E319003346EE /* LoginScreenTests */,
+				5BB997F62D66E334003346EE /* LoginScreenUITests */,
 				5B77D1882D5F004E005ECC5F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,6 +112,8 @@
 			isa = PBXGroup;
 			children = (
 				5B77D1872D5F004E005ECC5F /* LoginScreen.app */,
+				5BB997E82D66E319003346EE /* LoginScreenTests.xctest */,
+				5BB997F52D66E334003346EE /* LoginScreenUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -78,10 +138,61 @@
 			);
 			name = LoginScreen;
 			packageProductDependencies = (
+				5B77D2332D644B91005ECC5F /* SwiftKeychainWrapper */,
+				5B56F0CD2D66BEE200AA7E1D /* GoogleSignIn */,
+				5B56F0CF2D66BEE200AA7E1D /* GoogleSignInSwift */,
 			);
 			productName = LoginScreen;
 			productReference = 5B77D1872D5F004E005ECC5F /* LoginScreen.app */;
 			productType = "com.apple.product-type.application";
+		};
+		5BB997E72D66E319003346EE /* LoginScreenTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5BB997EE2D66E319003346EE /* Build configuration list for PBXNativeTarget "LoginScreenTests" */;
+			buildPhases = (
+				5BB997E42D66E319003346EE /* Sources */,
+				5BB997E52D66E319003346EE /* Frameworks */,
+				5BB997E62D66E319003346EE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5BB997ED2D66E319003346EE /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				5BB997E92D66E319003346EE /* LoginScreenTests */,
+			);
+			name = LoginScreenTests;
+			packageProductDependencies = (
+			);
+			productName = LoginScreenTests;
+			productReference = 5BB997E82D66E319003346EE /* LoginScreenTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5BB997F42D66E334003346EE /* LoginScreenUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5BB997FD2D66E334003346EE /* Build configuration list for PBXNativeTarget "LoginScreenUITests" */;
+			buildPhases = (
+				5BB997F12D66E334003346EE /* Sources */,
+				5BB997F22D66E334003346EE /* Frameworks */,
+				5BB997F32D66E334003346EE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5BB997FC2D66E334003346EE /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				5BB997F62D66E334003346EE /* LoginScreenUITests */,
+			);
+			name = LoginScreenUITests;
+			packageProductDependencies = (
+				5BB998002D66E9A7003346EE /* GoogleSignIn */,
+				5BB998022D66E9A7003346EE /* GoogleSignInSwift */,
+			);
+			productName = LoginScreenUITests;
+			productReference = 5BB997F52D66E334003346EE /* LoginScreenUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -96,6 +207,14 @@
 					5B77D1862D5F004E005ECC5F = {
 						CreatedOnToolsVersion = 16.2;
 					};
+					5BB997E72D66E319003346EE = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 5B77D1862D5F004E005ECC5F;
+					};
+					5BB997F42D66E334003346EE = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 5B77D1862D5F004E005ECC5F;
+					};
 				};
 			};
 			buildConfigurationList = 5B77D1822D5F004E005ECC5F /* Build configuration list for PBXProject "LoginScreen" */;
@@ -107,18 +226,38 @@
 			);
 			mainGroup = 5B77D17E2D5F004E005ECC5F;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				5B77D2322D644B91005ECC5F /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */,
+				5B56F0CC2D66BEE200AA7E1D /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 5B77D1882D5F004E005ECC5F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				5B77D1862D5F004E005ECC5F /* LoginScreen */,
+				5BB997E72D66E319003346EE /* LoginScreenTests */,
+				5BB997F42D66E334003346EE /* LoginScreenUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		5B77D1852D5F004E005ECC5F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BB997E62D66E319003346EE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BB997F32D66E334003346EE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -135,7 +274,34 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5BB997E42D66E319003346EE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BB997F12D66E334003346EE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5BB997ED2D66E319003346EE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5B77D1862D5F004E005ECC5F /* LoginScreen */;
+			targetProxy = 5BB997EC2D66E319003346EE /* PBXContainerItemProxy */;
+		};
+		5BB997FC2D66E334003346EE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5B77D1862D5F004E005ECC5F /* LoginScreen */;
+			targetProxy = 5BB997FB2D66E334003346EE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		5B77D19B2D5F0050005ECC5F /* Debug */ = {
@@ -157,7 +323,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = TC.LoginScreen;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rashadmilton.loginscreen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -184,7 +350,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = TC.LoginScreen;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rashadmilton.loginscreen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -311,6 +477,72 @@
 			};
 			name = Release;
 		};
+		5BB997EF2D66E319003346EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = TC.LoginScreenTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LoginScreen.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/LoginScreen";
+			};
+			name = Debug;
+		};
+		5BB997F02D66E319003346EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = TC.LoginScreenTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LoginScreen.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/LoginScreen";
+			};
+			name = Release;
+		};
+		5BB997FE2D66E334003346EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = TC.LoginScreenUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LoginScreen;
+			};
+			name = Debug;
+		};
+		5BB997FF2D66E334003346EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = TC.LoginScreenUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LoginScreen;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -332,7 +564,72 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		5BB997EE2D66E319003346EE /* Build configuration list for PBXNativeTarget "LoginScreenTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BB997EF2D66E319003346EE /* Debug */,
+				5BB997F02D66E319003346EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5BB997FD2D66E334003346EE /* Build configuration list for PBXNativeTarget "LoginScreenUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BB997FE2D66E334003346EE /* Debug */,
+				5BB997FF2D66E334003346EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5B56F0CC2D66BEE200AA7E1D /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
+		5B77D2322D644B91005ECC5F /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jrendel/SwiftKeychainWrapper";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5B56F0CD2D66BEE200AA7E1D /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5B56F0CC2D66BEE200AA7E1D /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		5B56F0CF2D66BEE200AA7E1D /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5B56F0CC2D66BEE200AA7E1D /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
+		};
+		5B77D2332D644B91005ECC5F /* SwiftKeychainWrapper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5B77D2322D644B91005ECC5F /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */;
+			productName = SwiftKeychainWrapper;
+		};
+		5BB998002D66E9A7003346EE /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5B56F0CC2D66BEE200AA7E1D /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		5BB998022D66E9A7003346EE /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5B56F0CC2D66BEE200AA7E1D /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5B77D17F2D5F004E005ECC5F /* Project object */;
 }
